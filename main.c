@@ -22,13 +22,16 @@ void Temperaturas(){
 }
 
 void Saida(){
-  printf("\nTemperaturas dentro da faixa de medição:\n");
+  printf("\nTemperaturas dentro da faixa de medição:");
   for(int i=0; i<10; i++){
     if(temperaturas[i] >= inferior && temperaturas[i] <= superior){
       printf("Temp %d: %dºC \n",i+1,temperaturas[i]);
       medicoes++;
-    } 
+    }
   }
+  if(medicoes == 0){
+      printf("\n[AVISO: Não há temperaturas dentro da faixa de medição!]");
+  }  
   printf("\nQuantidade de medições que ficaram dentro da faixa ideal: %d",medicoes);
 }
 
